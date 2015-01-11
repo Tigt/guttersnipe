@@ -1,11 +1,11 @@
 Guttersnipe
 ===========
 
-* Gutterpipe
-* _snipe
+* Gutterpipe (`_|`)
+* `_snipe`
 * Gutterwright
-* {gutter:snipe;}
-* <gutter-snipe />
+* `{gutter:snipe;}`
+* `<gutter-snipe />`
 * Guttertype (for SVG text fx, guidelines, etc.)
 * Gutterswipe (touch controls...?)
 * Gutterball
