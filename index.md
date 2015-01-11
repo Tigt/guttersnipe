@@ -1,7 +1,14 @@
-#Guttersnipe#
+Guttersnipe
+===========
 
-*Gutterpipe
-*
+* Gutterpipe
+* _snipe
+* Gutterwright
+* {gutter:snipe;}
+* <gutter-snipe />
+* Guttertype (for SVG text fx, guidelines, etc.)
+* Gutterswipe (touch controls...?)
+* Gutterball
 
 Guttersnipe is a bunch of helpers for publishing comics on the internet better than it's been done before. You can use as many or as few of these helpers as you wish.
 
@@ -38,5 +45,7 @@ I wouldn't exactly call HTML table layout algorithms "sophisticated," but at lea
 Seems kind of familiar, doesn't it?
 
 Make sure to *never remove* `table-layout: fixed`, as that will make behavior impossible to predict across browsers and reduce performance. (You really don't want the automatic layout to happen, anyway.)
+
+A tip: HTML table columns can be styled with the `<col>` and `<colgroup>` elements, which don't really accept content. I can't imagine you have a whole lot of void elements floating around on your page that you could press into service, so consider using `:before` and `:after` to fake some up.
 
 The only gotcha is absolute positioning inside `display: table` in Firefox 30 & below (a 12-year-old bug!), but you can use wrapper elements to get around that. The way we use it works around even that, though: http://davidwalsh.name/table-cell-position-absolute
