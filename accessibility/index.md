@@ -2,14 +2,14 @@
 
 Webcomics have been, historically, rubbish at accessibility. Absolute trash. You're lucky if you get an empty `alt` attribute.
 
-This is pathetic, but it does have a consolation: it is ridiculously easy to improve it. Even if you make a mistake, it literally cannot become worse; it's all up from here.
+This is pathetic, but it does have a consolation: it is ridiculously easy to improve it. Even if we make a mistake, it literally cannot become worse; it's all up from here.
 
 ##`alt` text##
 
 The first crack would probably be putting a transcription of the comic inside `alt`. However, you shouldn't.
 
-* Search engines nowadays punish you if your `alt` text gets too long, because those SEO assholes made Google punish us for cramming keywords into there.
-* Too much text inside `alt` is impossible to navigate well for screen-readers and Braille displays: if they want to reread a specific part of it, they have to start from the beginning again, since there's no way of breaking it up into smaller bits; you can't use more HTML inside of `alt`.
+* Search engines nowadays punish you if your `alt` text gets too long, because those SEO assholes made Google hate us for cramming keywords into there.
+* Too much text inside `alt` is impossible to navigate well for screen-readers and Braille displays: if they want to reread a specific part of it, they have to start from the beginning again, since there's no way of breaking it up into smaller bits. You can't use HTML inside of `alt`, basically.
 * `alt` text is *not a description of the image*. It's an alternative, which is a subtle but important difference. For most images, that means something like `alt="The Prime Minister of China signs the treaty"`, instead of describing his suit, hair, what pen he's using, etc. The context of the image and the point of including it are more important than what it's of.
 
 How long is too long? There isn't a hard number, but a good rule of thumb is to try fitting it into a tweet. How much useful information can you put into the 140 characters?
@@ -18,7 +18,7 @@ How long is too long? There isn't a hard number, but a good rule of thumb is to 
 <img src="http://www.paranatural.net/comics/1420797323-Ch5Pg4.png" alt="Dr. Zarei treats one of Francisco's students, who has been bitten by a spirit. Isabel overhears and is interested by the conversation.">
 ````
 
-A short, simple summary, which lets users quickly learn which comic this is (if they're looking for a specific one, for example), gives search engines information if somebody searches for something like "Paranatural Dr. Zarei", and prevents screen-readers from struggling to pronounce that ugly URL. Sometimes you won't be able to fit a good summary into just 140 characters, and that's okay! Users and search engines won't suddenly hate you if your summary really needs to be 159 characters long. Just aim for the ballpark.
+A short, simple summary, which lets users quickly learn which comic this is (if they're looking for a specific one, for example), gives search engines information if somebody searches for something like "<kbd>Paranatural Dr. Zarei</kbd>", and prevents screen-readers from struggling to pronounce that ugly URL. Sometimes you won't be able to fit a good summary into just 140 characters, and that's okay! Users and search engines won't suddenly hate you if your summary really needs to be 159 characters long. Just aim for the ballpark.
 
 <cite><a href="http://www.paranatural.net/">Paranatural</a></cite> has the page and chapter number elsewhere on the page, but for a comic like <cite><a href="http://www.casualvillain.com/Unsounded/comic/ch01/ch01_01.html">Unsounded</a></cite>, where it has a very simple page for reading, it would be nice to include that information:
 
@@ -49,11 +49,13 @@ I know as of HTML5 `longdesc` is supposed to be able to take an `id` like the ab
      aria-describedby="transcript">
 ````
 
-Or if support of the dual accessibility attributes isn't quite good enough, we can figure out how to make regular old `<a href="#transcript">` links that aren't ugly enough to make authors want to remove them.
+Or if support of the dual accessibility attributes isn't good enough, we can figure out how to make regular old `<a href="#transcript">` links that aren't ugly enough to make authors want to remove them.
+
+This, of course, assumes we have an actual transcript to point at.
 
 ##Transcripts##
 
-This, of course, assumes with have an actual transcript to point at. Something like the following would be nice:
+Something like the following would be nice:
 
 ````html
 <img src="http://www.beeserker.com/comics/2010-04-03-beeserker.png"
@@ -62,44 +64,44 @@ This, of course, assumes with have an actual transcript to point at. Something l
      aria-describedby="transcript">
 
 <aside id="transcript">
-    <section>
+    <section id="panel-1">
         <p><i>The sciencemen brainstorm in the lab...</i></p>
         <p><q><cite>First Scienceman:</cite> We should make a robot out of bees...</q></p>
     </section>
-    <section>
+    <section id="panel-2">
         <p><q><cite>First Scienceman:</cite> ...or perhaps make the robot powered by bees.</q></p>
         <p><q><cite>Second Scienceman:</cite> Better yet!</q></p>
     </section>
-    <section>
+    <section id="panel-3">
         <p><i>The second scienceman grasps the shoulder of the first.</i></p>
         <p><q><cite>Second Scienceman:</cite> <em>LET'S MAKE A BEE OUT OF POWER</em></q></p>
     </section>
-    <section>
+    <section id="panel-4">
         <p><i>Later!</i></p>
         <p><i>The sciencemen lay dead on the ground as the enormous bee composed of power darkens the sky with wrath.</i></p>
     </section>
 </aside>
 ````
 
-Suggestions for marking up a document as simple as a script with HTML's impoverished creative vocabulary (but `<var>` and `<samp>` are of course necessary) are appreciated. I'm trying to use `<i>`'s suggested use as "alternative voice" for all it's worth.
+Suggestions for marking up a document as simple as a script with HTML's sad vocabulary are appreciated. I'm trying to use `<i>`'s suggested use as "alternative voice" for all it's worth.
 
 I'd love to be able to do something like this instead:
 
 ````html
 <object type="image/png" data="http://www.beeserker.com/comics/2010-04-03-beeserker.png">
-    <section>
+    <section id="panel-1">
         <p><i>The sciencemen brainstorm in the lab...</i></p>
         <p><q><cite>First Scienceman:</cite> We should make a robot out of bees...</q></p>
     </section>
-    <section>
+    <section id="panel-2">
         <p><q><cite>First Scienceman:</cite> ...or perhaps make the robot powered by bees.</q></p>
         <p><q><cite>Second Scienceman:</cite> Better yet!</q></p>
     </section>
-    <section>
+    <section id="panel-3">
         <p><i>The second scienceman grasps the shoulder of the first.</i></p>
         <p><q><cite>Second Scienceman:</cite> <em>LET'S MAKE A BEE OUT OF POWER</em></q></p>
     </section>
-    <section>
+    <section id="panel-4">
         <p><i>Later!</i></p>
         <p><i>The sciencemen lay dead on the ground as the enormous bee composed of power darkens the sky with wrath.</i></p>
     </section>
@@ -123,7 +125,7 @@ Ideally we'd have a dedicated interface to take care of the markup for you. Some
     <p>Tip: Use *asterisks* for *italic* and **bold**</p>
 </form>
 
-Of course, this was all a bit of an academic exercise, because the truth of the matter is, if you want transcripts available you'll need to pay somebody to make them. And if you want good transcripts, you'll need to pay somebody to read them, too.
+Of course, this was all a bit of an academic exercise, because nobody writes transcripts. You'd have to pay them.
 
 In the future, where cars fly and fusion is cold, your phone could just OCR whatever you point it at. But until then, we'll have to figure out how to make comics accessible by default.
 
