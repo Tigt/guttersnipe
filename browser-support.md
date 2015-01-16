@@ -60,7 +60,12 @@ Along with the inline SVG and background image issues, Opera Mini is known to sa
 
 ## Responsive Images ##
 
-Responsive images are used natively where possible by using `<picture>`/`srcset` inside of `<foreignObject>`. Combined with Picturefill, this provides responsive images to all browsers that support inline SVG... Except for Internet Explorer.
+Responsive images are used natively where possible by using `<picture>`/`srcset` inside of `<foreignObject>`. Or, well, they will be. Two problems arise.
 
 Not even IE11 supports `<foreignObject>`. IE12 suggests it will, but for the current versions we'll need a fallback.
 
+It is possible to use another `<switch>` to provide a fallback `<image xlink:href>`, but this will have IE still download the regular image.
+
+Picturefill provides a jolly solution for almost all browsers that don't support native responsive images, but has two problems. One is the JavaScript dependency; nothing is shown at all in the fallback image. Two is that it doesnt take height into account, which is critical here.
+
+If the browser preloader doesnt grab `xlink:href`, we may have an out. Tests are underway.
