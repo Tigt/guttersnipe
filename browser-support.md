@@ -60,12 +60,17 @@ Along with the inline SVG and background image issues, Opera Mini is known to sa
 
 ## Responsive Images ##
 
-Responsive images are used natively where possible by using `<picture>`/`srcset` inside of `<foreignObject>`. Or, well, they will be. Two problems arise.
+Responsive images are used natively where possible by using `<picture>`/`srcset` inside of `<foreignObject>`. Or, well, they will be. Two problems arise:
 
-Not even IE11 supports `<foreignObject>`. IE12 suggests it will, but for the current versions we'll need a fallback.
+1. Internet Explorer does not support `<foreignObject>`. Not even IE11. [It's slated for IE12](https://status.modern.ie/svgforeignobjectelement?term=foreignObject), at least.
+2. "Native responsive images" don't work right now either. And [Picturefill](https://github.com/scottjehl/picturefill) won't save us.
 
-It is possible to use another `<switch>` to provide a fallback `<image xlink:href>`, but this will have IE still download the regular image.
+Picturefill provides a jolly solution for almost all browsers that don't support native responsive images ([which is most of them](http://caniuse.com/#feat=picture)), but has two problems. One is the JavaScript dependency; nothing is shown at all in the fallback image. Two is that it doesnt take height into account, which is critical here. Apparently the native Blink implementation also doesn't use height when selecting a source, which is also unsuitable.
 
-Picturefill provides a jolly solution for almost all browsers that don't support native responsive images, but has two problems. One is the JavaScript dependency; nothing is shown at all in the fallback image. Two is that it doesnt take height into account, which is critical here.
+If the browser preloader doesn't grab `xlink:href`, we may have an an opportunity to JavaScript in a solution. It will require server-side cooperation unless `document.write` is used, though. 
 
-If the browser preloader doesnt grab `xlink:href`, we may have an out. Tests are underway.
+SVG2 is allegedly working on a native solution similar to `<picture>`, but who knows what that will be reliable.
+
+So right now just a bare `<image xlink:href />` is used for embedded raster images, to keep it simple. There aren't any gains to be had from complicating it yet.
+
+## 
