@@ -23,6 +23,7 @@
     -Canvas-in, not content-out
     -Adapting existing comics made for the printed page
     -Panel relationships are too important to be treated like line breaks. (BONE example)
+    -The page model is too important to leave behind; sudden reveals, etc.
   * Newspaper Sunday strips
     -A solution to a problem much like responsive web design
     -The fatal flaw of lack of creator control
@@ -289,8 +290,6 @@ I'll let you finish cringing.
 If we peer past the forbidden old gods of `<frameset>`, `<table background=image.gif>`, and `onClick`, we see something very exciting.
 
 HTML was designed to mark up documents. *Kid Radd* treats the comic as said document. In this past, there's bits of the present. Semantics, accessibility, flexible images, bandwidth concerns. You like those, right?
-
-The only other place I've really seen this idea is [IndieWebCamp's approach to comics](https://indiewebcamp.com/comics), which stuffs a marked-up transcripts inside of an `<object type="image/jpg">`.
 
 It's possible to overlay regular text on images, like Capow and Olimax above do, but fitting text into a speech balloon and having it scale nicely isn't really feasible. HTML wasn't designed for exact typesetting. Flow text into rectangles? Sure. Flow text into an arbitrary shape that doesn't break when zooming? Well, there's `vmax`, and CSS Regions might become real within the next decade. Right now, it's either ugly hacks (`vmax`, `white-space: pre`, and a lot of hoping) or science fiction.
 

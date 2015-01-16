@@ -130,3 +130,7 @@ Of course, this was all a bit of an academic exercise, because nobody writes tra
 In the future, where cars fly and fusion is cold, your phone could just OCR whatever you point it at. But until then, we'll have to figure out how to make comics accessible by default.
 
 ##Using real text in comics##
+
+Ideally, we'd be able to just use some fancy CSS to transform a pile of markup into comics. This would work wonderfully for "accessible by default," but HTML wasn't designed for visual consistency. Bleeding edge CSS modules such as Regions and Shapes might work, but to have comics that work *now*, HTMl is unsuitable.
+
+But SVG is quite suitable. It'll take some work and bolted-on ARIA to get things working smoothly, but SVG might just be the future of webcomics; even the raster ones.
