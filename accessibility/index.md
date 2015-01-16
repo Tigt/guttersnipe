@@ -28,7 +28,7 @@ A short, simple summary, which lets users quickly learn which comic this is (if 
 
 This is a huge improvement already, because neither comics have any `alt` text at all. This isn't the fault of the authors; their comic publishing systems don't give them the ability to write any.
 
-Of course that would only be half the battle. Even with a capable CMS, we'd still need to encourage comic authors to actually write the thing. The good news is we could ask for a few-sentences summary that would be used when cross-posting to social media, assembled with missing comic metadata for `alt`, and thrown into `<meta name="description>`. We'd want something that invisibly drives authors to write good `alt` text without knowing it.
+Of course that would only be half the battle. Even with a capable CMS, we'd still need to encourage comic authors to actually write the thing. The good news is we could ask for a few-sentences summary that would be used when cross-posting to social media, assembled with missing comic metadata for `alt`, and thrown into `<meta name="description">`. We'd want something that invisibly drives authors to write good `alt` text without knowing it.
 
 But that's not quite an accessible comic. What if somebody wants to know what, exactly, Isabel overheard, or who's depicted in that chapter frontispiece?  `alt` may be unsuitable for description of the image, but we still need to have it *somewhere!*.
 
