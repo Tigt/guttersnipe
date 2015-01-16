@@ -52,4 +52,15 @@ Flexbox support is [getting better all the time](http://caniuse.com/#feat=flexbo
 
 Browsers that don't support `display: table` instead get the comic images butted up against the top, which is ugly but not catastrophic.
 
-Other vertical centering solutions were considered and discarded for a variety of reasons. Most of them were thrown out because they required knowing the dimensions of the comic, or the surrounding box, or both. The one most often used today involves `translate(-50%, -50%)`. This tended to result in odd rendering issues when combined with SVG, such as text artifacts. It also has poor browser support.
+Other vertical centering solutions were considered and discarded for a variety of reasons. Most of them were thrown out because they required knowing the dimensions of the comic, or the surrounding box, or both. The one most often used today involves `translate(-50%, -50%)`. This tended to result in odd rendering issues when combined with SVG, such as text artifacts. It also has [worse browser support](http://caniuse.com/#feat=transforms2d).
+
+## Opera Mini ##
+
+Along with the inline SVG and background image issues, Opera Mini is known to savage layouts. The HTML&CSS viewer has not been tested on it yet, and may require a specific shim. (Thankfully Opera provides a way of detecting this zombie version of Presto). 
+
+## Responsive Images ##
+
+Responsive images are used natively where possible by using `<picture>`/`srcset` inside of `<foreignObject>`. Combined with Picturefill, this provides responsive images to all browsers that support inline SVG... Except for Internet Explorer.
+
+Not even IE11 supports `<foreignObject>`. IE12 suggests it will, but for the current versions we'll need a fallback.
+
