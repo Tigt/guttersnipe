@@ -40,7 +40,7 @@ Well, no. We know `longdesc` has problems. However, we might as well strike a bl
 <img src="comic.png" alt="The Adventures of Popeye, #1: Popeye looks around for some spinach." longdesc="#transcript">
 ````
 
-I know as of HTML5 `longdesc` is supposed to be able to take an `id` like the above, but I can't figure out what the support for doing so is like. We might need a fully qualified URL of the page that `img` tag is on with `#transcript`, or have the CMS generate a standalone page (blegh). We might be better served with something like this:
+I know as of HTML5 `longdesc` is supposed to be able to take an `id` like the above, but I can't figure out what the support for doing so is like. We might need `http://the.current/page/the/image/is/on#transcript`, or have the CMS generate a standalone page (blegh). We might be better served with something like this:
 
 ````html
 <img src="comic.png"
@@ -51,7 +51,7 @@ I know as of HTML5 `longdesc` is supposed to be able to take an `id` like the ab
 
 Or if support of the dual accessibility attributes isn't good enough, we can figure out how to make regular old `<a href="#transcript">` links that aren't ugly enough to make authors want to remove them.
 
-This, of course, assumes we have an actual transcript to point at.
+This, of course, assumes we have an actual transcript to point at. I'm pretty sure we want it on the same page as the comic. It gives search engines something to actually look for (finding specific comics in an archive is notoriously difficult in webcomics), second is that it doesn't ask users who need the long description to open a new URL/tab/window (and imagine if it was an offline copy!). Most webcomic transcript plugins do just this, so I'm not alone in this opinion.
 
 ##Transcripts##
 
@@ -59,17 +59,17 @@ Something like the following would be nice:
 
 ````html
 <img src="http://www.beeserker.com/comics/2010-04-03-beeserker.png"
-     alt="The Sciencemen spitball ideas for their next project."
+     alt="The Sciencemen spitball ideas for their next science project."
      longdesc="#transcript"
      aria-describedby="transcript">
 
 <aside id="transcript">
     <section id="panel-1">
-        <p><i>The sciencemen brainstorm in the lab...</i></p>
-        <p><q><cite>First Scienceman:</cite> We should make a robot out of bees...</q></p>
+        <p><i>The sciencemen brainstorm in the lab…</i></p>
+        <p><q><cite>First Scienceman:</cite> We should make a robot out of bees…</q></p>
     </section>
     <section id="panel-2">
-        <p><q><cite>First Scienceman:</cite> ...or perhaps make the robot powered by bees.</q></p>
+        <p><q><cite>First Scienceman:</cite> …or perhaps make the robot powered by bees.</q></p>
         <p><q><cite>Second Scienceman:</cite> Better yet!</q></p>
     </section>
     <section id="panel-3">
@@ -78,7 +78,7 @@ Something like the following would be nice:
     </section>
     <section id="panel-4">
         <p><i>Later!</i></p>
-        <p><i>The sciencemen lay dead on the ground as the enormous bee composed of power darkens the sky with wrath.</i></p>
+        <p><i>The sciencemen lay dead on the ground as an enormous bee composed of power darkens the sky with wrath.</i></p>
     </section>
 </aside>
 ````
@@ -90,11 +90,11 @@ I'd love to be able to do something like this instead:
 ````html
 <object type="image/png" data="http://www.beeserker.com/comics/2010-04-03-beeserker.png">
     <section id="panel-1">
-        <p><i>The sciencemen brainstorm in the lab...</i></p>
-        <p><q><cite>First Scienceman:</cite> We should make a robot out of bees...</q></p>
+        <p><i>The sciencemen brainstorm in the lab…</i></p>
+        <p><q><cite>First Scienceman:</cite> We should make a robot out of bees…</q></p>
     </section>
     <section id="panel-2">
-        <p><q><cite>First Scienceman:</cite> ...or perhaps make the robot powered by bees.</q></p>
+        <p><q><cite>First Scienceman:</cite> …or perhaps make the robot powered by bees.</q></p>
         <p><q><cite>Second Scienceman:</cite> Better yet!</q></p>
     </section>
     <section id="panel-3">
@@ -108,7 +108,7 @@ I'd love to be able to do something like this instead:
 </object>
 ````
 
-But if it were this simple, it would be common practice... right? I've seen [Tantek Celik use this for comics](https://indiewebcamp.com/Falcon#comics), but his intention was to use the enclosed markup for metadata, so I can't be sure this works for accessibility. (Really, everything about `<object>` never did work out like it was supposed to.)
+But if it were this simple, it would be common practice… right? I've seen [Tantek Celik use this for comics](https://indiewebcamp.com/Falcon#comics), but his intention was to use the enclosed markup for metadata, so I can't be sure this works for accessibility. (Really, everything about `<object>` never did work out like it was supposed to.)
 
 There are existing solutions: [OhNoRobot has been crowdsourcing transcripts](http://www.ohnorobot.com/) for years, and all the major WordPress comic plugins that have been ([Comic Easel](http://comiceasel.com/), [ComicPress](http://comicpress.org/), [Webcomic](http://webcomic.nu/)) let authors and/or readers write their own.
 

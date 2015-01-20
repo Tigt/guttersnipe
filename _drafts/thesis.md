@@ -1,68 +1,62 @@
-##Outline##
+#Outline#
+
 1. Showoffy intro
   * Now that I have your attention, let's talk about webcomics!
 2. What we've currently got
   * Influenced by comic strips or comic books; designed for the printed page
   * They're presented as monolithic images stuffed into `<img src>`. This isn't great.
-    * Semantically poor
-      --Inaccessible: nobody in comics uses `alt` correctly but it wouldn't work anyway
-      --Uncrawable: well Google can tell you what the comic's number is, as if you knew that
-      --Unextendable without heavyweight tech like OCR and image analysis
-    -Transcripts attempt to alleviate this, but are second-class citizens
-  * Miserable on phones
-    -Zoom and pan is largely unavoidable the way comics are currently set up. And we KNOW people hate vertical & horizontal scrolling together.
-    -Generally terrible navigation designed for mouse pointers
-    -Existing comics that adapt to mobile
-      --Dinosaur Comics
-      --xkcd (note the faked title text)
-      --Smackjeeves Viewer, which is an approach Marvel is taking
-      --All of these are merely retrofits
+    - Inaccessible: nobody in comics uses `alt` correctly but it wouldn't work anyway
+    - Uncrawable: well Google can tell you what the comic's number is, as if you knew that
+    - Unextendable without heavyweight tech like OCR and image analysis
+    - Transcripts attempt to alleviate this, but are second-class citizens and rarely-used
+    - Miserable on phones
+    - Zoom and pan is largely unavoidable the way comics are currently set up. And we KNOW people hate vertical & horizontal scrolling together.
+    - Generally terrible navigation designed for mouse pointers
+    - Existing comics that adapt to mobile
+      - Dinosaur Comics
+      - xkcd (note the faked title text)
+      - Smackjeeves Viewer, which is an approach Marvel is taking
+      - All of these are merely retrofits. In fact, the "guided view" doesn't need the "full size" at all
 3. Responsive comics
   * Existing solutions to responsive comics
-    -The examples
-    -Canvas-in, not content-out
-    -Adapting existing comics made for the printed page
-    -Panel relationships are too important to be treated like line breaks. (BONE example)
-    -The page model is too important to leave behind; sudden reveals, etc.
+    - The examples
+    - Canvas-in, not content-out
+    - Adapting existing comics made for the printed page
+    - Panel relationships are too important to be treated like line breaks. (BONE example)
+    - The page model is too important to leave behind; sudden reveals, etc.
   * Newspaper Sunday strips
-    -A solution to a problem much like responsive web design
-    -The fatal flaw of lack of creator control
-    -If we want to design content-out, what is our content?
+    - A solution to a problem much like responsive web design
+    - The fatal flaw of lack of creator control
+    - If we want to design content-out, what is our content?
   * Panelsets
-    -Platinum Grit & dA experiment
-    -Creator-defined transitions where a "jump" exists anyway in the "Z" reading order we use
-    -The page is valuable
+    - Platinum Grit & dA experiment
+    - Creator-defined transitions where a "jump" exists anyway in the "Z" reading order we use
+    - The page is valuable
   * The Elastic Canvas
-    -The Infinite Canvas
-    -The Infinite Canvas's philosophy contrasted with Responsive Web Design
-      --Infinite pages
-    -The code for the Elastic Canvas
-    -Some large comics can never be made small; this allows for that (Murder scene example)
+    - The Infinite Canvas
+    - The Infinite Canvas's philosophy contrasted with Responsive Web Design
+    - The code for the Elastic Canvas
+    - Some large comics can never be made small; this allows for that (Murder scene example)
   * Kid Radd segue to SVG comics (because there is nothing new under the sun, somebody came up with my solution many years earlier)
 4. SVG comics
   * What Kid Radd did
-    -Markup: comic as document
-    -Text as text
-    -Performance concerns
-    -Animations & Scripting
+    - Markup: comic as document
+    - Text as text
+    - Performance concerns
+    - Animations & Scripting
   * Text as text
-    -Accessible, crawlable, usable
-    -Transcripts are already a thing, this solves the "Write twice" problem and the issue of where to put the transcripts (accessible enough for those who need them, unobtrusive enough for those who don't... just let the comic speak for itself)
+    - Accessible, crawlable, usable
+    - Transcripts are already a thing, this solves the "Write twice" problem and the issue of where to put the transcripts (accessible enough for those who need them, unobtrusive enough for those who don't... just let the comic speak for itself)
   * Performance concerns
-    -Responsive images
-    -Separation of concerns
+    - Responsive images
+    - Separation of concerns
   * Animations & Scripting
-    -What we DON'T want is some of the nonsense that comes out of Marvel's "motion comics"
+    - What we DON'T want is some of the nonsense that comes out of Marvel's "motion comics"
   * Accessibility
-    -SVG accessibility isn't perfect, but it's far better than `alt`
-    -The `<title>` element shows up as a tooltip and as a result, with any popularity of SVG comics, will be turned into a joke much like how `alt` was also hover text for a while
-    -`<title>` and `<desc>` thankfully [auto-switch to the HTML namespace according to the spec](https://html.spec.whatwg.org/multipage/syntax.html#html-integration-point), so we can leverage the usual semantics if necessary
-    -Ideally we could have comics that transform into a radio drama; unfortunately aural CSS is a joke. But we'll see what we can do.
-
-<main id="viewer">
-  <section class="panelset">
-  </section>
-</main>
+    - SVG accessibility isn't perfect, but it's far better than `alt`
+    - The `<title>` element shows up as a tooltip and as a result, with any popularity of SVG comics, will be turned into a joke much like how `alt` was also hover text for a while
+    - `<title>` and `<desc>` thankfully [auto-switch to the HTML namespace according to the spec](https://html.spec.whatwg.org/multipage/syntax.html#html-integration-point), so we can leverage the usual semantics if necessary
+    - Ideally we could have comics that transform into a radio drama; unfortunately aural CSS is a joke. But we'll see what we can do.
 
 
 Putting the “Web” into Webcomics
@@ -114,9 +108,9 @@ Comics on the internet, right? They've been the the same thing since forever: "H
 
 (*Witches & Stitches* - a bunch of JPGs you could grab off Compuserve; *T.H.E. Fox* a bunch of GIFs on Usenet & Quantum Link; *Where the Buffalo Roam* - published through FTP & Usenet)
 
-Even on the Web, the image files were just slotted into `src`s. The idea's to use the 'Net until you get a *real* publisher, yeah? If you drew for print, you had the hard work already done when the syndicates picked you up!
+Even on the Web, the image files were just slotted into `src`s. The idea is to use the 'Net until you get a *real* publisher, yeah? If you drew for print, you had the hard work already done when the syndicates picked you up!
 
-I'm not *sure* when this way of thinking changed, but I have a few guesses why it did.
+I'm not *sure* when that way of thinking changed, but I have a few guesses why it did.
 
 (A newspaper building on fire, Diamond Comics with tentacles strangling a comic book store, a shiny storefront saying "Publish for free!" "Reach millions of people!")
 
@@ -132,9 +126,7 @@ The more things change, the more they stay the same, huh? Go ahead and give Argo
 
 And really, Argon Zark is about as modern as any other webcomic today. Comics have since advanced in filesize, but they still fire up Flash to do anything fancier than hover text.
 
-(Flash may be a bad word amongst developers, but creators *love* it--it's one of the most mature creative tools out there. Can you imagine if it exported to SVG+JavaScript?)
-
-Webcomics are still stuck in Web 2.0. Except, I'm not sure they were ever part of Web 1.0, since they've remain frozen inside `<img>` tags. They're still just "Here's some image files for you to look at!"
+Webcomics are still stuck in Web 2.0. Except, I'm not sure they were ever part of Web 1.0: they take the "text" out of hypertext.  They're still just "Here's some image files for you to look at!"
 
 Reading webcomics on mobile is really bad. It's the old pan 'n zoom song 'n dance we strive to leave behind. But with the panels locked in an opaque bitmap like that, it's all you can do.
 
@@ -163,7 +155,7 @@ There are experiments that flow panels into whatever width they're given:
 [Sly Mongoose - A Responsive Comic](http://www.slideshare.net/pablodefendini/sly-mongoose-a-responsive-comic)
 [Capow Framework for responsive comics](http://www.capow.net/)
 
-Sure, you can wrap panels like text, but unlike text, paneling *lives* on its spatial relationships. A paragraph doesn't change its meaning when wrapped at 40 or 80 characters. But panels can be connected by sightlines, visual repetition, reinforcing reading direction, proximity... You wouldn't put new paragraph breaks in a novel adapting it for a small screen, would you?
+Sure, you can wrap panels like text, but unlike text, paneling *lives* on its spatial relationships. A paragraph doesn't change its meaning when wrapped at 40 or 80 characters. But panels can be connected by sightlines, visual repetition, reinforcing reading direction, proximity... You wouldn't put *new* paragraph breaks in a novel when adapting it for small screens, would you?
 
 Those of you who've read Scott McCloud also know that comic storytelling is hidden in the gutters. You can't mess with those without consequences.
 
