@@ -133,4 +133,4 @@ In the future, where cars fly and fusion is cold, your phone could just OCR what
 
 Ideally, we'd be able to just use some fancy CSS to transform a pile of markup into comics. This would work wonderfully for "accessible by default," but HTML wasn't designed for visual consistency. Bleeding edge CSS modules such as Regions and Shapes might work, but to have comics that work *now*, HTMl is unsuitable.
 
-But SVG is quite suitable. It'll take some work and bolted-on ARIA to get things working smoothly, but SVG might just be the future of webcomics; even the raster ones.
+But SVG is quite suitable: it's a language built for visual consistency and positioning. It'll take some work and bolted-on ARIA to get things working smoothly, but SVG might just be the future of webcomics; even the raster ones.
