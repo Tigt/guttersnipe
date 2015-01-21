@@ -18,17 +18,17 @@ The first crack would probably be putting a transcription of the comic inside `a
 
 How long is too long? There isn't a hard number, but a good rule of thumb is to try fitting it into a tweet. How much useful information can you put into the 140 characters?
 
-````html
+{% highlight html %}
 <img src="http://www.paranatural.net/comics/1420797323-Ch5Pg4.png" alt="Dr. Zarei treats one of Francisco's students, who has been bitten by a spirit. Isabel overhears and is interested by the conversation.">
-````
+{% endhighlight %}
 
 A short, simple summary, which lets users quickly learn which comic this is (if they're looking for a specific one, for example), gives search engines information if somebody searches for something like "<kbd>Paranatural Dr. Zarei</kbd>", and prevents screen-readers from struggling to pronounce that ugly URL. Sometimes you won't be able to fit a good summary into just 140 characters, and that's okay! Users and search engines won't suddenly hate you if your summary really needs to be 159 characters long. Just aim for the ballpark.
 
 <cite><a href="http://www.paranatural.net/">Paranatural</a></cite> has the page and chapter number elsewhere on the page, but for a comic like <cite><a href="http://www.casualvillain.com/Unsounded/comic/ch01/ch01_01.html">Unsounded</a></cite>, where it has a very simple page for reading, it would be nice to include that information:
 
-````html
+{% highlight html %}
 <img src="pageart/ch01_01.jpg" alt="Start of Chapter 1: A Reluctant Escort">
-````
+{% endhighlight %}
 
 This is a huge improvement already, because neither comics have any `alt` text at all. This isn't the fault of the authors; their comic publishing systems don't give them the ability to write any.
 
@@ -40,18 +40,18 @@ But that's not quite an accessible comic. What if somebody wants to know what, e
 
 Well, no. We know `longdesc` has problems. However, we might as well strike a blow for justice:
 
-````html
+{% highlight html %}
 <img src="comic.png" alt="The Adventures of Popeye, #1: Popeye looks around for some spinach." longdesc="#transcript">
-````
+{% endhighlight %}
 
 I know as of HTML5 `longdesc` is supposed to be able to take an `id` like the above, but I can't figure out what the support for doing so is like. We might need `http://the.current/page/the/image/is/on#transcript`, or have the CMS generate a standalone page (blegh). We might be better served with something like this:
 
-````html
+{% highlight html %}
 <img src="comic.png"
      alt="The Adventures of Popeye, #1: Popeye looks around for some spinach."
      longdesc="#transcript"
      aria-describedby="transcript">
-````
+{% endhighlight %}
 
 Or if support of the dual accessibility attributes isn't good enough, we can figure out how to make regular old `<a href="#transcript">` links that aren't ugly enough to make authors want to remove them.
 
@@ -61,7 +61,7 @@ This, of course, assumes we have an actual transcript to point at. I'm pretty su
 
 Something like the following would be nice:
 
-````html
+{% highlight html %}
 <img src="http://www.beeserker.com/comics/2010-04-03-beeserker.png"
      alt="The Sciencemen spitball ideas for their next science project."
      longdesc="#transcript"
@@ -85,13 +85,13 @@ Something like the following would be nice:
         <p><i>The sciencemen lay dead on the ground as an enormous bee composed of power darkens the sky with wrath.</i></p>
     </section>
 </aside>
-````
+{% endhighlight %}
 
 Suggestions for marking up a document as simple as a script with HTML's sad vocabulary are appreciated. I'm trying to use `<i>`'s suggested use as "alternative voice" for all it's worth.
 
 I'd love to be able to do something like this instead:
 
-````html
+{% highlight html %}
 <object type="image/png" data="http://www.beeserker.com/comics/2010-04-03-beeserker.png">
     <section id="panel-1">
         <p><i>The sciencemen brainstorm in the lab…</i></p>
@@ -110,7 +110,7 @@ I'd love to be able to do something like this instead:
         <p><i>The sciencemen lay dead on the ground as the enormous bee composed of power darkens the sky with wrath.</i></p>
     </section>
 </object>
-````
+{% endhighlight %}
 
 But if it were this simple, it would be common practice… right? I've seen [Tantek Celik use this for comics](https://indiewebcamp.com/Falcon#comics), but his intention was to use the enclosed markup for metadata, so I can't be sure this works for accessibility. (Really, everything about `<object>` never did work out like it was supposed to.)
 
