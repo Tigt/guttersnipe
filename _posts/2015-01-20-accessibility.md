@@ -19,7 +19,8 @@ The first crack would probably be putting a transcription of the comic inside `a
 How long is too long? There isn't a hard number, but a good rule of thumb is to try fitting it into a tweet. How much useful information can you put into the 140 characters?
 
 {% highlight html %}
-<img src="http://www.paranatural.net/comics/1420797323-Ch5Pg4.png" alt="Dr. Zarei treats one of Francisco's students, who has been bitten by a spirit. Isabel overhears and is interested by the conversation.">
+<img src="http://www.paranatural.net/comics/1420797323-Ch5Pg4.png"
+    alt="Dr. Zarei treats one of Francisco's students, who has been bitten by a spirit. Isabel overhears and is interested by the conversation.">
 {% endhighlight %}
 
 A short, simple summary, which lets users quickly learn which comic this is (if they're looking for a specific one, for example), gives search engines information if somebody searches for something like "<kbd>Paranatural Dr. Zarei</kbd>", and prevents screen-readers from struggling to pronounce that ugly URL. Sometimes you won't be able to fit a good summary into just 140 characters, and that's okay! Users and search engines won't suddenly hate you if your summary really needs to be 159 characters long. Just aim for the ballpark.
