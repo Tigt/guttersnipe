@@ -1,4 +1,8 @@
-#Accessible comics on the internet#
+---
+title: Accessible comics
+description: Webcomics have historically been completely inaccessible, but that can change.
+---
+#Accessible comics#
 
 Webcomics have been, historically, rubbish at accessibility. Absolute trash. You're lucky if you get an empty `alt` attribute.
 
