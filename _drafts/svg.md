@@ -20,3 +20,5 @@ I've collected some gotchas for SVG that you may find helpful:
 * The `viewBox` attribute is powerful enough to handle every single coordinate-system issue that could arise. This means it is impossible to understand.
 * Its built-in accessibility elements are not actually supported by practically any assisstive technology. ARIA helps, thank god.
 * There isn't actually a solid fallback to have worse browsers display a PNG instead. This comes close.
+* There are four places an SVG can get its final displayed size: the `viewBox`, the CSS height and width, the height and width attributes, and the CSS 2.1 spec. 
+* Google Translate wraps everything it changes in `<font>` tags (wtf?), and this causes the HTML5 parser to think you've ended the SVG early. However, Microsoft/Bing's translation service works perfectly. They both support the inline methods of opting out, so we'll have to use `<meta name="google" content="notranslate">`

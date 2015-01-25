@@ -108,7 +108,7 @@ Comics on the internet, right? They've been the the same thing since forever: "H
 
 (*Witches & Stitches* - a bunch of JPGs you could grab off Compuserve; *T.H.E. Fox* a bunch of GIFs on Usenet & Quantum Link; *Where the Buffalo Roam* - published through FTP & Usenet)
 
-Even on the Web, the image files were just slotted into `src`s. The idea is to use the 'Net until you get a *real* publisher, yeah? If you drew for print, you had the hard work already done when the syndicates picked you up!
+Even on the Web, the files were just slotted into `<img>` tags. You see, the idea is to use the 'Net until you get a *real* publisher, yeah? If you drew for print, you had the hard work already done when the syndicates picked you up!
 
 I'm not *sure* when that way of thinking changed, but I have a few guesses why it did.
 
