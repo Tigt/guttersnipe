@@ -6,24 +6,24 @@
   * Influenced by comic strips or comic books; designed for the printed page
   * They're presented as monolithic images stuffed into `<img src>`. This isn't great.
     - Inaccessible: nobody in comics uses `alt` correctly but it wouldn't work anyway
-    - Uncrawable: well Google can tell you what the comic's number is, as if you knew that
+    - Unsearchable: well, Google can tell you what the comic's number is, as if you knew that
     - Unextendable without heavyweight tech like OCR and image analysis
     - Transcripts attempt to alleviate this, but are second-class citizens and rarely-used
     - Miserable on phones
     - Zoom and pan is largely unavoidable the way comics are currently set up. And we KNOW people hate vertical & horizontal scrolling together.
     - Generally terrible navigation designed for mouse pointers
-    - Existing comics that adapt to mobile
+  * Existing comics that adapt to mobile
       - Dinosaur Comics
-      - xkcd (note the faked title text)
-      - Smackjeeves Viewer, which is an approach Marvel is taking
+      - xkcd (note the "title" text)
+      - Smackjeeves Viewer, which is an approach ComiXology is taking
       - All of these are merely retrofits. In fact, the "guided view" doesn't need the "full size" at all
 3. Responsive comics
   * Existing solutions to responsive comics
-    - The examples
+    - The examples (Mozilla hackathon, etc.)
     - Canvas-in, not content-out
     - Adapting existing comics made for the printed page
-    - Panel relationships are too important to be treated like line breaks. (BONE example)
-    - The page model is too important to leave behind; sudden reveals, etc.
+    - Panel relationships are too important to be treated like line breaks.
+    - The page model has plenty of value; sudden reveals, etc.
   * Newspaper Sunday strips
     - A solution to a problem much like responsive web design
     - The fatal flaw of lack of creator control
@@ -289,7 +289,7 @@ It's doable, for sure, you're just stuck with severely constrained design. Creat
 
 Today, we have much more powerful tools to work with. You know what's great at accessible text with robust layout and artistic treatment? SVG.
 
-It's definitely possible to make comics in pure SVG, but artists today are most comfortable with bitmaps, and many art styles are poorly suited to vector graphics. Thankfully, SVG provides a way to embed bitmaps with the `<image />` element. Separation of the word balloons as SVG `<text>` overlaid on a `<path />` brings us excellent graphical control while exposing the text to search engines, user agents, assistive technology, machine translation...
+It's definitely possible to make comics in pure SVG, but artists today are most comfortable with bitmaps, and many art styles are poorly suited to vector graphics. Thankfully, SVG provides a way to embed bitmaps with the `<image />` element. Separation of the word balloons as SVG `<text>` overlaid on a `<path />` brings us excellent graphical control while exposing the text to search engines, user agents, assistive technology, machine translation... (Note: Google Translate does not work using inline SVG. Use the [Microsoft Translator](http://www.microsofttranslator.com/bv.aspx).
 
 Separating the art from the words also allows for some interesting performance considerations. Aggressive JPEG compression is less noticeable on photographic images, but grimy on text and word balloons. Separating the two lets us crush one and GZIP the other.
 
