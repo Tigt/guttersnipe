@@ -53,3 +53,33 @@ And panels further subdivide:
 You can just type 3 of the appropriate `===` and `---` characters, but full-width formatting is nice.
 
 Inside 
+
+## Word Balloons ##
+
+```cmxd
+CHARACTER:
+Dialogue!
+```
+
+You can influence the type of word balloon by adding verbs:
+
+```cmxd
+CHARACTER shouts:
+Dialogue!
+````
+
+Possible verbs are:
+
+* shouts
+* thinks
+* transmits
+* realizes
+
+You can "connect" balloons like this:
+
+```cmxd
+CHARACTER thinks:
+Wait, hold on here...
+ |
+What just happened?
+```

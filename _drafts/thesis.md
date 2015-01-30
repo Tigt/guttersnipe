@@ -62,7 +62,7 @@
 Putting the “Web” into Webcomics
 ================================
 
-*attention-grabbing, tech-demo intro*
+## attention-grabbing, tech-demo intro ##
 
 A figure walks through Zac Gorman rain in a city. *splish splish splish* follows SVG sound effects (Consider a rain loop.)
 
@@ -102,19 +102,37 @@ Skeleton replace panel; musical sting ( https://www.youtube.com/watch?v=ONQUwP0F
 
 "Now that I have your attention, let's talk about webcomics!"
 
---------
+===
 
-Comics on the internet, right? They've been the the same thing since forever: "Here's some image files for you to look at!"
+Comics on the internet, right? They've been the the same thing since forever.
 
-(*Witches & Stitches* - a bunch of JPGs you could grab off Compuserve; *T.H.E. Fox* a bunch of GIFs on Usenet & Quantum Link; *Where the Buffalo Roam* - published through FTP & Usenet)
+("Here's some image files for you to look at!")
 
-Even on the Web, the files were just slotted into `<img>` tags. You see, the idea is to use the 'Net until you get a *real* publisher, yeah? If you drew for print, you had the hard work already done when the syndicates picked you up!
+---
+
+(*Witches & Stitches* - a bunch of JPGs you could grab off Compuserve;
+*T.H.E. Fox* a bunch of GIFs on Usenet & Quantum Link;
+*Where the Buffalo Roam* - published through FTP & Usenet)
+
+===
+
+Even on the Web, the files were just slotted into `<img>` tags.
+
+The idea is to use the 'Net until you get a *real* publisher, yeah? If you drew for print, you had the hard work already done when the industry picked you up!
+
+===
 
 I'm not *sure* when that way of thinking changed, but I have a few guesses why it did.
 
+---
+
 (A newspaper building on fire, Diamond Comics with tentacles strangling a comic book store, a shiny storefront saying "Publish for free!" "Reach millions of people!")
 
+===
+
 But you're probably sick of hearing that one.
+
+===
 
 It was a while before someone wanted to see what the Web could do that paper couldn't. In his own words:
 
