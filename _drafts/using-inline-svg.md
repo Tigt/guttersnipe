@@ -23,10 +23,10 @@ Not all CSS properties apply to SVG. BREAK OUT YOUR IMAGE REPLACEMENT TECHNIQUES
 
 * No XML prologs, DOCTYPE, or namespaces required. In fact, sometimes they cause harm.
 
-* Requires CSS sizing set to render consistently in all browsers; not just the `height` and `width` attributes. Include a `viewBox` too. Do this:
+* Requires CSS sizing set to render consistently in all browsers; [do not use the `height` and `width` attributes](https://docs.google.com/presentation/d/1POUiroOBbLmXYlQKf0pIR8zVkHWH9jRVN-w8A4aNsIk/mobilepresent?slide=id.g1e19b0d66_279). Include a `viewBox` too. Do this:
 
 ````html
-<svg width="{X}" height="{Y}" viewBox="0 0 {X} {Y}" style="width:{X}height:{Y}">
+<svg viewBox="0 0 {X} {Y}" style="width:{X}; height:{Y}">
 ````
 
 * Automatically switches to HTML inside `<title>`, `<desc>`, and `<foreignObject>`

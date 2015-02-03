@@ -104,29 +104,45 @@ Skeleton replace panel; musical sting ( https://www.youtube.com/watch?v=ONQUwP0F
 
 ===
 
+##Webcomics?##
+
+===
+
 Comics on the internet, right? They've been the the same thing since forever.
 
-("Here's some image files for you to look at!")
+"Here's some image files for you to look at!"
 
 ---
 
-(*Witches & Stitches* - a bunch of JPGs you could grab off Compuserve;
-*T.H.E. Fox* a bunch of GIFs on Usenet & Quantum Link;
-*Where the Buffalo Roam* - published through FTP & Usenet)
+*Witches & Stitches* - a bunch of JPGs you could grab off Compuserve;
+
+*T.H.E. Fox* - a bunch of GIFs on Usenet & Quantum Link;
+
+*Where the Buffalo Roam* - published through FTP & Usenet (alt.comics.buffalo-roam)
 
 ===
 
-Even on the Web, the files were just slotted into `<img>` tags.
-
-The idea is to use the 'Net until you get a *real* publisher, yeah? If you drew for print, you had the hard work already done when the industry picked you up!
-
-===
-
-I'm not *sure* when that way of thinking changed, but I have a few guesses why it did.
+Even with the Web, the files were just slotted into `<img>` tags. Not much changed.
 
 ---
 
-(A newspaper building on fire, Diamond Comics with tentacles strangling a comic book store, a shiny storefront saying "Publish for free!" "Reach millions of people!")
+The idea was to use the 'Net until you get a *real* publisher.
+
+If you drew for print, the hard work's already done when the industry picks you up!
+
+---
+
+Mr. DC, browsing the internet: "What do you think of this kid's style?"
+
+Mr. Marvel: "Put him on a flight here by tonight!"
+
+===
+
+I'm not sure when that way of thinking changed, but I have a few guesses why it did.
+
+---
+
+(A newspaper building on fire, Diamond Comics with tentacles strangling a comic book store, a shiny storefront saying "Publish for free!" "Reach billions of people!")
 
 ===
 
