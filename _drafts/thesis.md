@@ -114,11 +114,11 @@ Comics on the internet, right? They've been the the same thing since forever.
 
 ---
 
-*Witches & Stitches* - a bunch of JPGs you could grab off Compuserve;
+*Witches & Stitches* - CompuServe;
 
-*T.H.E. Fox* - a bunch of GIFs on Usenet & Quantum Link;
+*T.H.E. Fox* - Quantum Link;
 
-*Where the Buffalo Roam* - published through FTP & Usenet (alt.comics.buffalo-roam)
+*Where the Buffalo Roam* - FTP & Usenet (alt.comics.buffalo-roam)
 
 ===
 
